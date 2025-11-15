@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张兴城 - 华中科技大学软件工程2025级学生</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-light: #112240;
+            --secondary: #1e3a5f;
+            --accent: #ff6b6b;
+            --accent-light: #ff8e8e;
+            --accent-blue: #64ffda;
+            --accent-purple: #a855f7;
+            --accent-orange: #ff9e64;
+            --text-light: #ccd6f6;
+            --text-gray: #8892b0;
+            --white: #e6f1ff;
+            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), var(--accent-blue));
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: 10%;
+            left: 10%;
+            opacity: 0.1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+            bottom: 10%;
+            right: 10%;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 107, 107, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            margin-right: 15px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-light);
+            color: var(--primary-dark);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--primary-light);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            top: 10%;
+            right: 10%;
+            opacity: 0.1;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-blue), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-dark);
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover::after {
+            transform: scale(1.2);
+            background-color: var(--accent);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border-left: 3px solid var(--accent);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .timeline-content .date {
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        /* Current Status Section */
+        .current-status {
+            background-color: var(--primary-light);
+            position: relative;
+        }
+
+        .current-status::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+            bottom: 10%;
+            left: 5%;
+            opacity: 0.1;
+        }
+
+        .status-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .status-card {
+            background-color: var(--primary-dark);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 3px solid var(--accent-orange);
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .status-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-orange);
+        }
+
+        .status-card h3 {
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .status-card p {
+            color: var(--text-gray);
+        }
+
+        /* Skills Section */
+        .skills {
+            position: relative;
+        }
+
+        .skills::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            top: 10%;
+            left: 5%;
+            opacity: 0.1;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: var(--primary-light);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border-top: 3px solid var(--accent);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: rgba(136, 146, 176, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent), var(--accent-purple));
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Future Projects Section */
+        .future-projects {
+            background-color: var(--primary-light);
+            position: relative;
+        }
+
+        .future-projects::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            top: 10%;
+            left: 5%;
+            opacity: 0.1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--primary-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .project-content p {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech span {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--accent-blue);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: 10%;
+            right: 5%;
+            opacity: 0.1;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            margin-right: 15px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--primary-light);
+            border: 1px solid rgba(136, 146, 176, 0.3);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(136, 146, 176, 0.1);
+        }
+
+        footer p {
+            color: var(--text-gray);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left, .right {
+                left: 0;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">张<span>兴城</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#current-status">当前状态</a></li>
+                    <li><a href="#timeline">大学规划</a></li>
+                    <li><a href="#skills">学习计划</a></li>
+                    <li><a href="#future-projects">未来项目</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>你好，我是张兴城</h1>
+                <h2>华中科技大学软件工程2025级新生</h2>
+                <p>一名即将踏入大学校园的软件工程准新生，对计算机科学充满期待与热情。这是我的成长记录与数字家园，记录我的大学四年规划与进步。</p>
+                <a href="#timeline" class="btn btn-primary">查看我的规划</a>
+                <a href="#contact" class="btn">联系我</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>即将开启软件工程之旅</h3>
+                    <p>我是即将于2025年9月入学的华中科技大学软件工程专业新生，对计算机科学和技术充满期待。虽然还未正式开始大学生活，但我已经制定了清晰的四年规划，希望通过系统的学习和不断的实践，成为一名优秀的软件工程师。</p>
+                    <p>目前我正在利用入学前的时间学习编程基础，为大学生活做好充分准备。我相信通过努力学习和实践，我能够实现自己的目标。</p>
+                    <p>除了技术学习，我也计划积极参与校园活动和社团，不断拓展自己的视野和能力边界。</p>
+                    <a href="#contact" class="btn">联系我</a>
+                </div>
+                <div class="about-image">
+                    <div class="profile-img">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Status Section -->
+    <section id="current-status" class="current-status">
+        <div class="container">
+            <h2 class="section-title">当前状态</h2>
+            <div class="status-container">
+                <div class="status-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>入学时间</h3>
+                    <p>2025年9月</p>
+                    <p>即将成为华中科技大学软件工程专业新生</p>
+                </div>
+                <div class="status-card">
+                    <i class="fas fa-book"></i>
+                    <h3>当前学习</h3>
+                    <p>C语言基础</p>
+                    <p>HTML/CSS入门</p>
+                    <p>计算机基础概念</p>
+                </div>
+                <div class="status-card">
+                    <i class="fas fa-target"></i>
+                    <h3>准备目标</h3>
+                    <p>打好编程基础</p>
+                    <p>了解大学生活</p>
+                    <p>制定学习计划</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">大学四年规划</h2>
+            <div class="timeline">
+                <!-- 大一 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>大一探索期</h3>
+                        <span class="date">2025.09 - 2026.06</span>
+                        <ul>
+                            <li><strong>目标：</strong>夯实基础，开拓视野</li>
+                            <li><strong>学业：</strong>GPA保持专业前30%，打好数学、编程等基础课程根基</li>
+                            <li><strong>技能：</strong>C语言，Python基础，HTML/CSS基础，Git入门</li>
+                            <li><strong>实践：</strong>加入技术社团，参加编程马拉松，开始使用GitHub管理代码</li>
+                            <li><strong>产出物：</strong>课程项目、第一篇技术博客、GitHub主页</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 大二 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>大二发展期</h3>
+                        <span class="date">2026.09 - 2027.06</span>
+                        <ul>
+                            <li><strong>目标：</strong>技能深化，探索方向</li>
+                            <li><strong>学业：</strong>深入学习数据结构、算法、计算机网络、操作系统等核心课程</li>
+                            <li><strong>技能：</strong>Java，Vue/React基础，MySQL，数据结构与算法</li>
+                            <li><strong>实践：</strong>参与开源项目或独立开发个人项目，申请校内科研助理，暑期技术实习</li>
+                            <li><strong>产出物：</strong>个人项目、实习经历、更丰富的技术博客</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 大三 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>大三冲刺期</h3>
+                        <span class="date">2027.09 - 2028.06</span>
+                        <ul>
+                            <li><strong>目标：</strong>专业分流，实习攻坚</li>
+                            <li><strong>学业：</strong>根据兴趣选择专业方向（Web开发/AI/数据科学），选修高阶课程</li>
+                            <li><strong>技能：</strong>MERN/Spring Cloud技术栈，Linux，Docker，LeetCode刷题</li>
+                            <li><strong>实践：</strong>争取大厂暑期实习，主导或核心参与中型项目</li>
+                            <li><strong>产出物：</strong>高质量实习经历、完整的项目作品、竞赛奖项</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 大四 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>大四收获期</h3>
+                        <span class="date">2028.09 - 2029.06</span>
+                        <ul>
+                            <li><strong>目标：</strong>定位未来，顺利过渡</li>
+                            <li><strong>路径A（就业）：</strong>全力准备秋招/春招，完善简历和作品集，拿下心仪Offer</li>
+                            <li><strong>路径B（考研）：</strong>全力备考研究生，深入研究某一领域的专家级知识</li>
+                            <li><strong>技能：</strong>深入学习某一领域的专家级知识</li>
+                            <li><strong>产出物：</strong>工作Offer/研究生录取通知书</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">学习计划</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>大一计划</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>C语言程序设计</span>
+                            <span>计划中</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python基础</span>
+                            <span>计划中</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS基础</span>
+                            <span>计划中</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Git版本控制</span>
+                            <span>计划中</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>大二计划</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>数据结构与算法</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Java程序设计</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>前端框架(Vue/React)</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>数据库(MySQL)</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>大三计划</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>全栈开发</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Linux系统</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Docker容器</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>系统设计</span>
+                            <span>未来学习</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Projects Section -->
+    <section id="future-projects" class="future-projects">
+        <div class="container">
+            <h2 class="section-title">未来项目规划</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>个人学习管理系统</h3>
+                        <p>计划在大二开发的个人学习管理系统，帮助管理学习计划、记录学习进度和整理学习资源。</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Spring Boot</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>算法练习平台</h3>
+                        <p>计划在大三开发的算法练习平台，包含多种算法题目和可视化演示，帮助提升算法能力。</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>校园资源共享平台</h3>
+                        <p>计划在大四开发的校园资源共享平台，方便学生分享学习资料、课程笔记和项目经验。</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Spring Cloud</span>
+                            <span>Redis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系方式</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>让我们保持联系</h3>
+                    <p>如果您对我的大学规划感兴趣，或者有任何建议和合作机会，请随时与我联系。我期待与您交流！</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>zhangxingcheng@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 138-XXXX-XXXX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>湖北省武汉市，华中科技大学</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://weixin.com" target="_blank"><i class="fab fa-weixin"></i></a>
+                        <a href="https://bilibili.com" target="_blank"><i class="fab fa-bilibili"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" class="form-control" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" class="form-control" placeholder="请输入您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <input type="text" id="subject" class="form-control" placeholder
